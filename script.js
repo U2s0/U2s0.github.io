@@ -83,9 +83,7 @@ document.addEventListener('click', (e) => {
         }
     }
 });
-    const typingText = document.querySelector('.typing-text'); 
-    typingText.textContent = '请输入文本。'; 
-}); 
+});
 
 
 
@@ -94,4 +92,17 @@ document.addEventListener('click', (e) => {
 document.getElementById('mybilibili').addEventListener('click', function() {
         window.location.href ='https://space.bilibili.com/3546375377652003';
     });
+		
+ const text = "请输入文本。"; 
+const typingText = document.querySelector('.typing-text');
+ 
+let index = 0;
+const typingEffect = setInterval(() => {
+    if (index < text.length) {
+        typingText.textContent += text.charAt(index);
+        index++;
+    } else {
+        clearInterval(typingEffect);
+    }
+}, 200);
 
